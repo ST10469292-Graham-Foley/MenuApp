@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/nameTxt"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        android:text="Time-Based Meal Recommendations" />
+
+    <TextView
+        android:id="@+id/explainTxt"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:textAlignment="center"
+        android:textStyle="italic"
+        android:layout_marginTop="30dp"
+        android:textSize="25dp"
+        android:text="Enter the Time to Get Your Recommended Meal" />
+
+    <EditText
+        android:id="@+id/timeInput"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:textAlignment="center"
+        android:ems="10"
+        android:inputType="text"
+        android:textSize="15sp"
+        android:hint="Morning, Mid-Morning, Afternoon, Mid-Afternoon, Evening" />
+
+    <Button
+        android:id="@+id/enterBtn"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:text="Enter" />
+
+    <TextView
+        android:id="@+id/optionsTxt"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:textSize="20dp"
+        android:text="Meal Option" />
+
+    <TextView
+        android:id="@+id/mealTxt"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/resetBtn"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:text="Reset" />
+
+    <Button
+        android:id="@+id/exitBtn"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="200dp"
+        android:text="EXIT" />
+</LinearLayout>
