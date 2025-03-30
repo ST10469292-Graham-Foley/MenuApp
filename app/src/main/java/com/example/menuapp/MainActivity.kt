@@ -34,4 +34,12 @@ class MainActivity : AppCompatActivity() {
         val exitBtn = findViewById<Button>(R.id.exitBtn)
 
     }
+    private fun Empty(): Boolean{
+        var b = true
+        if(timeInput?.text.toString().trim().isEmpty()){
+            timeInput?.error = "Enter Time of Day"
+            b = false
+        }
+        return b
+    }
 }
