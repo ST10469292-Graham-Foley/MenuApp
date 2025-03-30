@@ -1,5 +1,6 @@
 package com.example.menuapp
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -8,6 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,8 +35,27 @@ class MainActivity : AppCompatActivity() {
         val resetBtn = findViewById<Button>(R.id.resetBtn)
         val exitBtn = findViewById<Button>(R.id.exitBtn)
 
+        enterBtn.setOnClickListener{
+            mealRecommend()
+        }
+
     }
-    private fun Empty(): Boolean{
+    private fun mealRecommend() {
+        if (empty()) {
+            if (timeInput?.text.toString().trim() == "Morning") {
+                mealTxt?.text = "Eggs and Bacon"
+            } else if (timeInput?.text.toString().trim() == "Mid-Morning") {
+                mealTxt?.text = "Avo on Toast"
+            } else if (timeInput?.text.toString().trim() == "Afternoon") {
+                mealTxt?.text = "Sandwich"
+            } else if (timeInput?.text.toString().trim() == "Mid-Afternoon") {
+                mealTxt?.text = "Yogurt"
+            } else if (timeInput?.text.toString().trim() == "Evening") {
+                mealTxt?.text = "Chicken and Rice"
+            }
+        }
+    }
+    private fun empty(): Boolean{
         var b = true
         if(timeInput?.text.toString().trim().isEmpty()){
             timeInput?.error = "Enter Time of Day"
