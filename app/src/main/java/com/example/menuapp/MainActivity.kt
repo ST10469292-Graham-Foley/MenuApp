@@ -1,6 +1,5 @@
 package com.example.menuapp
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -35,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         val resetBtn = findViewById<Button>(R.id.resetBtn)
         val exitBtn = findViewById<Button>(R.id.exitBtn)
 
-        enterBtn.setOnClickListener{
+        enterBtn.setOnClickListener {
             mealRecommend()
         }
         resetBtn.setOnClickListener {
@@ -46,6 +45,7 @@ class MainActivity : AppCompatActivity() {
             exitProcess(-1)
         }
     }
+
     private fun mealRecommend() {
         if (empty()) {
             if (timeInput?.text.toString().trim() == "Morning") {
@@ -53,18 +53,23 @@ class MainActivity : AppCompatActivity() {
             } else if (timeInput?.text.toString().trim() == "Mid-Morning") {
                 mealTxt?.text = "Avo on Toast"
             } else if (timeInput?.text.toString().trim() == "Afternoon") {
-                mealTxt?.text = "Sandwich"
+                mealTxt?.text = "Peanut Butter Sandwich"
             } else if (timeInput?.text.toString().trim() == "Mid-Afternoon") {
                 mealTxt?.text = "Yogurt"
             } else if (timeInput?.text.toString().trim() == "Evening") {
                 mealTxt?.text = "Chicken and Rice"
+            } else if (empty()){
+                timeInput?.error = "Check Spelling"
+                mealTxt?.text = ""
             }
         }
     }
-    private fun empty(): Boolean{
+
+    private fun empty(): Boolean {
         var b = true
-        if(timeInput?.text.toString().trim().isEmpty()){
+        if (timeInput?.text.toString().trim().isEmpty()) {
             timeInput?.error = "Enter Time of Day"
+            mealTxt?.text = ""
             b = false
         }
         return b
