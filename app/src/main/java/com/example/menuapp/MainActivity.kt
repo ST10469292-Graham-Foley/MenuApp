@@ -42,6 +42,9 @@ class MainActivity : AppCompatActivity() {
             timeInput?.setText("")
             mealTxt?.text = ""
         }
+        exitBtn.setOnClickListener {
+            exitProcess(-1)
+        }
     }
     private fun mealRecommend() {
         if (empty()) {
