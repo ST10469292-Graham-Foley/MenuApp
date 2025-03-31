@@ -11,7 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
-
+    // Declare private variables
     private var timeInput: EditText? = null
     private var mealTxt: TextView? = null
 
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
+        // Declare variables
         timeInput = findViewById(R.id.timeInput)
         mealTxt = findViewById(R.id.mealTxt)
 
@@ -33,19 +33,21 @@ class MainActivity : AppCompatActivity() {
         val mealTxt = findViewById<TextView>(R.id.mealTxt)
         val resetBtn = findViewById<Button>(R.id.resetBtn)
         val exitBtn = findViewById<Button>(R.id.exitBtn)
-
+        // Enter button code to use the "mealRecommend" function
         enterBtn.setOnClickListener {
             mealRecommend()
         }
+        // Reset button code to reset "timeInput" and "mealTxt"
         resetBtn.setOnClickListener {
             timeInput?.setText("")
             mealTxt?.text = ""
         }
+        // Exit button code to exit the program
         exitBtn.setOnClickListener {
             exitProcess(-1)
         }
     }
-
+    // function using if statement to determine the time that was input
     private fun mealRecommend() {
         if (empty()) {
             if (timeInput?.text.toString().trim() == "Morning") {
@@ -60,13 +62,14 @@ class MainActivity : AppCompatActivity() {
                 mealTxt?.text = "Chicken and Rice"
             } else if (timeInput?.text.toString().trim() == "Night") {
                 mealTxt?.text = "Melktert"
+            // Displays error for incorrect input
             } else if (empty()){
                 timeInput?.error = "Check Spelling"
                 mealTxt?.text = ""
             }
         }
     }
-
+    // Displays error if input is left empty
     private fun empty(): Boolean {
         var b = true
         if (timeInput?.text.toString().trim().isEmpty()) {
