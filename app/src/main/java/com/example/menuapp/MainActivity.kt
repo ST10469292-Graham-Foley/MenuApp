@@ -58,6 +58,8 @@ class MainActivity : AppCompatActivity() {
                 mealTxt?.text = "Yogurt"
             } else if (timeInput?.text.toString().trim() == "Evening") {
                 mealTxt?.text = "Chicken and Rice"
+            } else if (timeInput?.text.toString().trim() == "Night") {
+                mealTxt?.text = "Melktert"
             } else if (empty()){
                 timeInput?.error = "Check Spelling"
                 mealTxt?.text = ""
