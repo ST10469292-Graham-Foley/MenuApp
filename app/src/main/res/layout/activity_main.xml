@@ -76,6 +76,6 @@
         android:layout_width="150sp"
         android:layout_height="50sp"
         android:layout_gravity="center"
-        android:layout_marginTop="200sp"
+        android:layout_marginTop="100sp"
         android:text="EXIT" />
 </LinearLayout>
